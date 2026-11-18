@@ -44,10 +44,25 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 /* 読点の後でだけ改行する（「ます」だけが次の行に落ちないように） */
 .midcta p span{display:inline-block}
 .midcta .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;width:min(100%,440px);
-  padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;text-decoration:none}
+  padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;letter-spacing:.04em;line-height:1.3;text-decoration:none}
 .midcta .btn{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 20px rgba(var(--line-shadow),.35);transition:transform .15s ease,box-shadow .15s ease}
 .midcta .btn:active{transform:translateY(2px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 2px 0 var(--line-deep),0 5px 12px rgba(var(--line-shadow),.3)}
-.midcta .btn small{background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px}
+.midcta .btn small{display:inline-block;background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
 .midcta .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .midcta .btns{display:flex;flex-direction:column;align-items:center;gap:12px}
 
+
+/* 画像の上に重ねるLINEボタン（FV・最後のCTA）。追従ボタン・途中の相談ボタンと同じ見た目 */
+.imgbtn{position:absolute;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;gap:.5em;
+  min-height:56px;padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;
+  letter-spacing:.04em;line-height:1.3;text-decoration:none;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 24px rgba(var(--line-shadow),.35);
+  transition:transform .15s ease,box-shadow .15s ease,opacity .7s ease}
+.imgbtn:active{transform:translateY(calc(-50% + 2px));box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 2px 0 var(--line-deep),0 5px 12px rgba(var(--line-shadow),.3)}
+.imgbtn{white-space:nowrap}
+.imgbtn small{display:inline-block;background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
+.imgbtn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.sec:not(.fv) .imgbtn{opacity:0}
+.sec.in .imgbtn{opacity:1}
+@media (prefers-reduced-motion: reduce){.sec:not(.fv) .imgbtn{opacity:1;transition:none}}
+@media (max-width:360px){.imgbtn,.float,.midcta .btn{padding:12px 12px;font-size:15.5px;letter-spacing:.02em}}
