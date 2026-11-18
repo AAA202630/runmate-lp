@@ -65,4 +65,7 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 .sec:not(.fv) .imgbtn{opacity:0}
 .sec.in .imgbtn{opacity:1}
 @media (prefers-reduced-motion: reduce){.sec:not(.fv) .imgbtn{opacity:1;transition:none}}
-@media (max-width:360px){.imgbtn,.float,.midcta .btn{padding:12px 12px;font-size:15.5px;letter-spacing:.02em}}
+
+/* LINEボタン5つの共通指定：必ず1行、幅に合わせて文字を少しだけ縮める（375px以下の画面で2行に折れないように） */
+.float,.midcta .btn,.imgbtn{white-space:nowrap;padding:12px;font-size:clamp(13px,calc(4.7vw - 1.3px),17px)}
+.float small,.midcta .btn small,.imgbtn small{font-size:.706em}
