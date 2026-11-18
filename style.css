@@ -1,5 +1,5 @@
 :root{
-  --black:#0F0F0F; --red:#FF0000; --line:#06C755; --gray:#606060; --bg:#FFFFFF; --soft:#F2F2F2;
+  --black:#0F0F0F; --red:#FF0000; --line:#06C755; --line-deep:#04913E; --line-shadow:3,110,50; --gray:#606060; --bg:#FFFFFF; --soft:#F2F2F2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -21,8 +21,11 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 .float{position:fixed;left:50%;bottom:14px;transform:translate(-50%,140%);width:min(520px,calc(100% - 32px));
   display:flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:12px 20px;border-radius:10px;
   background:var(--line);color:#fff;font-weight:700;font-size:17px;letter-spacing:.04em;text-decoration:none;line-height:1.3;
-  box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .35s ease;z-index:20}
+  /* 影は黒にせず緑を濃くした色。下の濃い緑は押せる板の厚み、上端の白は光（mato-button-depth） */
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 24px rgba(var(--line-shadow),.35);
+  transition:transform .35s ease;z-index:20}
 .float.show{transform:translate(-50%,0)}
+.float:active{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 2px 0 var(--line-deep),0 5px 12px rgba(var(--line-shadow),.3)}
 .float small{display:inline-block;background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
 
 .foot{background:var(--black);color:#bbb;text-align:center;padding:40px 16px 110px;line-height:1.8;font-size:13px}
@@ -40,6 +43,8 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 .midcta p{font-size:15px;margin-bottom:14px;letter-spacing:.02em}
 .midcta .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;width:min(100%,440px);
   padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;text-decoration:none}
+.midcta .btn{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 20px rgba(var(--line-shadow),.35);transition:transform .15s ease,box-shadow .15s ease}
+.midcta .btn:active{transform:translateY(2px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 2px 0 var(--line-deep),0 5px 12px rgba(var(--line-shadow),.3)}
 .midcta .btn small{background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px}
 .midcta .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .midcta .btns{display:flex;flex-direction:column;align-items:center;gap:12px}
