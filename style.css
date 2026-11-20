@@ -1,9 +1,9 @@
 :root{
-  --black:#0F0F0F; --red:#FF0000; --line:#06C755; --line-deep:#04913E; --line-shadow:3,110,50; --gray:#606060; --bg:#FFFFFF; --soft:#F2F2F2;
+  --black:#0E2A47; --navy:#0E2A47; --red:#1E88E5; --sky:#12B5E5; --blue:#1E88E5; --line:linear-gradient(90deg,#12B5E5,#1E88E5); --line-deep:#1565C0; --line-shadow:30,136,229; --gray:#5F6B7A; --bg:#FFFFFF; --soft:#E8F4FC;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
+body{background:#eef3f8;color:var(--black);font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
 .lp{max-width:560px;margin:0 auto;background:var(--bg);box-shadow:0 0 40px rgba(0,0,0,.08)}
 .sec{position:relative;line-height:0}
 .sec img{display:block;width:100%;height:auto}
@@ -19,7 +19,7 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 
 /* 追従ボタン */
 .float{position:fixed;left:50%;bottom:14px;transform:translate(-50%,140%);width:min(494px,88.2vw);
-  display:flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:12px 20px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;padding:12px 20px;border-radius:999px;
   background:var(--line);color:#fff;font-weight:700;font-size:17px;letter-spacing:.04em;text-decoration:none;line-height:1.3;
   /* 影は黒にせず緑を濃くした色。下の濃い緑は押せる板の厚み、上端の白は光（mato-button-depth） */
   box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 24px rgba(var(--line-shadow),.35);
@@ -29,7 +29,7 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 .float small{display:inline-block;background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
 
 /* ロゴは直前のCTA画像にあるので、フッターは © だけ */
-.foot{background:var(--black);color:#bbb;text-align:center;padding:20px 16px calc(32px + env(safe-area-inset-bottom));line-height:1.8;font-size:13px}
+.foot{background:var(--navy);color:#c9d6e6;text-align:center;padding:20px 16px calc(32px + env(safe-area-inset-bottom));line-height:1.8;font-size:13px}
 .note{background:#fff8d6;color:#5a4a00;font-size:13px;line-height:1.7;padding:10px 16px;text-align:center}
 
 @media (prefers-reduced-motion: reduce){
@@ -39,22 +39,22 @@ body{background:#e9e9e9;color:var(--black);font-family:"Hiragino Sans","Noto San
 }
 
 /* 途中の相談ボタン */
-.midcta{background:var(--black);color:#fff;text-align:center;padding:28px 16px 30px;line-height:1.6}
-.midcta p{font-size:15px;margin-bottom:14px;letter-spacing:.02em}
+.midcta{background:var(--soft);color:var(--navy);text-align:center;padding:28px 16px 30px;line-height:1.6}
+.midcta p{font-size:15px;font-weight:700;margin-bottom:14px;letter-spacing:.02em}
 /* 読点の後でだけ改行する（「ます」だけが次の行に落ちないように） */
 .midcta p span{display:inline-block}
 .midcta .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:56px;width:min(494px,88.2vw);
-  padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;letter-spacing:.04em;line-height:1.3;text-decoration:none}
+  padding:12px 20px;border-radius:999px;background:var(--line);color:#fff;font-weight:700;font-size:17px;letter-spacing:.04em;line-height:1.3;text-decoration:none}
 .midcta .btn{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 20px rgba(var(--line-shadow),.35);transition:transform .15s ease,box-shadow .15s ease}
 .midcta .btn:active{transform:translateY(2px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 2px 0 var(--line-deep),0 5px 12px rgba(var(--line-shadow),.3)}
 .midcta .btn small{display:inline-block;background:#fff;color:var(--red);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}
-.midcta .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.midcta .btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
 .midcta .btns{display:flex;flex-direction:column;align-items:center;gap:12px}
 
 
 /* 画像の上に重ねるLINEボタン（FV・最後のCTA）。追従ボタン・途中の相談ボタンと同じ見た目 */
 .imgbtn{position:absolute;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;gap:.5em;
-  min-height:56px;padding:12px 20px;border-radius:10px;background:var(--line);color:#fff;font-weight:700;font-size:17px;
+  min-height:56px;padding:12px 20px;border-radius:999px;background:var(--line);color:#fff;font-weight:700;font-size:17px;
   letter-spacing:.04em;line-height:1.3;text-decoration:none;
   box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 4px 0 var(--line-deep),0 10px 24px rgba(var(--line-shadow),.35);
   transition:transform .15s ease,box-shadow .15s ease,opacity .7s ease}
