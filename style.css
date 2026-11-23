@@ -102,3 +102,84 @@ body{background:#eef3f8;color:var(--black);font-family:"Hiragino Sans","Noto San
 .pr-note{font-size:11px;color:var(--gray);line-height:1.7;margin-top:14px}
 .pr-cta{margin-top:14px;text-align:center;font-size:13px;font-weight:700}
 .pr-nw{white-space:nowrap}
+
+/* 料金：案A（比較表）2026-11-23 */
+.pa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.pa-card{position:relative;border:1.5px solid #D7E6F2;border-radius:12px;padding:12px 4px 10px;text-align:center;background:#fff}
+.pa-card.pa-rec{border-color:var(--sky);background:linear-gradient(180deg,#E6F6FD,#fff);box-shadow:0 6px 16px rgba(18,181,229,.18)}
+.pa-ribbon{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#F6B73C;color:var(--navy);font-size:10px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pa-who{font-size:10px;color:var(--gray);font-weight:700;line-height:1.3;min-height:26px}
+.pa-name{font-size:13px;font-weight:800;margin:4px 0 6px;line-height:1.3}
+.pa-yen{font-size:24px;line-height:1;font-weight:900}
+.pa-unit{font-size:11px;font-weight:800}
+.pa-tax{display:block;font-size:10px;color:var(--gray);font-weight:600;margin-top:2px}
+.pa-cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;line-height:1.4}
+.pa-cmp th,.pa-cmp td{padding:9px 4px;text-align:center;border-bottom:1px solid #D7E6F2}
+.pa-cmp tbody th{text-align:left;font-weight:700;width:30%;padding-left:2px}
+.pa-cmp td.pa-r{background:#F1FAFE}
+.pa-ok{color:var(--sky);font-weight:900;font-size:15px}
+.pa-no{color:#B8C4CF}
+.pa-self{font-size:10px;color:var(--gray)}
+.pa-num{font-weight:800}
+.pa-cmp caption.sr,.pa-cmp thead.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* 比較表：項目名を値の上に1行で置き、値の3列を上のカードの3列とそろえる */
+.pa-cmp{table-layout:fixed}
+.pa-cmp tr.pa-lab th{width:auto;text-align:left;font-size:11px;font-weight:700;color:var(--gray);padding:10px 2px 2px;border-bottom:none}
+.pa-cmp tr:not(.pa-lab) td{padding:4px 4px 10px;font-size:13px}
+
+/* 料金：決定版（2026-11-23）。上の見出しの行がプランのカード、その真下に値。おすすめの列は上から下まで1本の水色の枠でつなぐ */
+.pt{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;margin-top:6px}
+.pt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pt-h{position:relative;vertical-align:bottom;text-align:center;padding:14px 2px 12px;background:#F5F9FC;border-radius:14px 14px 0 0;font-weight:800;color:var(--navy)}
+.pt-h + .pt-h{border-left:4px solid #fff}
+.pt-h.pt-rec{background:linear-gradient(180deg,#17B6E6,#1E88E5);color:#fff;border-left:4px solid #fff;border-right:4px solid #fff}
+.pt-rib{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#F6B73C;color:var(--navy);font-size:11px;font-weight:800;padding:2px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.pt-who{display:block;font-size:10px;font-weight:700;color:var(--gray);line-height:1.3;margin-bottom:4px}
+.pt-h.pt-rec .pt-who,.pt-h.pt-rec .pt-tax{color:#E3F4FF}
+.pt-name{display:block;font-size:14px;line-height:1.3}
+.pt-price{display:block;margin-top:8px;font-size:11px;font-weight:800;line-height:1}
+.pt-price b{font-size:28px;font-weight:900;letter-spacing:-.01em;margin:0 1px}
+.pt-tax{display:block;font-size:10px;color:var(--gray);font-weight:600;margin-top:4px}
+.pt td.pt-rec{background:#EEF8FD;border-left:4px solid #fff;border-right:4px solid #fff}
+.pt-grp th{background:var(--navy);color:#fff;font-size:12px;font-weight:800;text-align:left;padding:7px 12px;letter-spacing:.04em}
+.pt tbody tr.pt-grp:first-child th{border-radius:0}
+.pt-lab th{font-size:12px;font-weight:700;color:var(--gray);text-align:left;padding:10px 6px 0}
+.pt-val td{text-align:center;padding:4px 2px 10px;font-size:15px;font-weight:800;color:var(--navy);border-bottom:1px solid #E3EDF5}
+.pt-val td.pt-rec{color:#0F6FC2}
+.pt-ok{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--sky);color:#fff;font-size:13px;font-weight:900}
+.pt-no{color:#B8C4CF;font-weight:700}
+.pt-small{font-size:11px;font-weight:700;color:var(--gray)}
+.pt-end td{height:10px;padding:0}
+.pt-end td.pt-rec{background:#EEF8FD;border-radius:0 0 14px 14px}
+
+/* 料金：パターンY（プランごとの縦長カードを並べた表）2026-11-23 */
+.pc{width:100%;border-collapse:separate;border-spacing:6px 0;table-layout:fixed;margin:6px -6px 0;width:calc(100% + 12px)}
+.pc-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pc thead th{position:relative;padding:14px 2px 10px;text-align:center;background:#F5F9FC;border-radius:14px 14px 0 0;vertical-align:bottom;font-weight:800;color:var(--navy)}
+.pc-who{display:block;font-size:10px;color:var(--gray);font-weight:700;line-height:1.3;margin-bottom:3px}
+.pc-name{display:block;font-size:13px;font-weight:900;line-height:1.3}
+.pc-price{display:block;font-size:11px;font-weight:800;margin-top:6px;line-height:1.1}
+.pc-price b{font-size:24px;font-weight:900}
+.pc-tax{display:block;font-size:10px;color:var(--gray);font-weight:600;margin-top:2px}
+.pc thead th.pc-r{background:#fff;box-shadow:inset 0 0 0 2.5px var(--sky)}
+.pc-rib{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#F6B73C;color:var(--navy);font-size:10px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pc td{background:#F5F9FC;text-align:center;padding:2px 2px 10px;font-size:15px;font-weight:800;color:var(--navy)}
+.pc td.pc-r{background:#fff;box-shadow:inset 2.5px 0 0 var(--sky),inset -2.5px 0 0 var(--sky);color:var(--blue)}
+.pc tbody th{background:#F5F9FC;text-align:left;font-weight:700;white-space:nowrap;overflow:visible;position:relative;z-index:1}
+.pc-lab th{padding:10px 6px 0;font-size:11px;color:var(--gray)}
+.pc-lab td,.pc-grp td{padding:0}
+.pc-grp th{padding:14px 4px 0;font-size:11px;font-weight:900;color:var(--navy)}
+.pc-ok{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--sky);color:#fff;font-size:12px;align-items:center;justify-content:center}
+.pc-no{color:#B8C4CF;font-weight:700}
+.pc-small{font-size:11px;font-weight:700;color:var(--gray)}
+.pc-end td{height:12px;padding:0;border-radius:0 0 14px 14px}
+.pc-end td.pc-r{box-shadow:inset 2.5px 0 0 var(--sky),inset -2.5px 0 0 var(--sky),inset 0 -2.5px 0 var(--sky)}
+.pc thead th.pc-r{box-shadow:inset 2.5px 0 0 var(--sky),inset -2.5px 0 0 var(--sky),inset 0 2.5px 0 var(--sky)}
+/* 列の地と、おすすめの枠は、表の後ろに1枚ずつ敷く（セルごとに塗ると、行の境目に細いすき間の線が出るため） */
+.pc-wrap{position:relative;margin:6px 0 0}
+.pc-wrap .pc{position:relative;z-index:1;margin:0 -6px;width:calc(100% + 12px)}
+.pc-wrap .pc thead th,.pc-wrap .pc td,.pc-wrap .pc tbody th{background:transparent !important;box-shadow:none !important}
+.pc-bg{position:absolute;top:0;bottom:0;width:calc((100% - 12px) / 3);border-radius:14px;background:#F5F9FC}
+.pc-bg1{left:0}
+.pc-bg2{left:calc((100% - 12px) / 3 + 6px);background:#fff;box-shadow:inset 0 0 0 2.5px var(--sky)}
+.pc-bg3{right:0}
